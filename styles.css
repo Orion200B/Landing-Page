@@ -31,6 +31,7 @@ ul{
 a{
     text-decoration: none;
     color: inherit;
+    animation: navbarLinkReverse .2s forwards;
 }
 
 .welcome{
@@ -55,16 +56,35 @@ h1{
     width: 400px;
     height: 250px;
     border-radius: 15px;
-    transform: rotate(5deg);
+    animation: rotAgain 0.5s forwards;
 }
 
 .stImg:hover{  
-    transform: rotate(0deg);
+    animation: rot 0.5s forwards;
+}
+
+@keyframes rot {
+    0%{
+        transform: rotate(5deg); 
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes rotAgain{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(5deg); 
+    }
 }
 
 .btn{
     background-color: #3882f6;
     border: none;
+    animation: buttonAnimReverse 0.5s;
     color: white;
     height: 30px;
     width: 100px;
@@ -72,14 +92,56 @@ h1{
 }
 
 .btn:hover{
-    background-color: #1f2937;
-    border: 1px solid white;
+    animation: buttonAnim 0.5s forwards;
     cursor: pointer;
 }
 
+.btn:active{
+    cursor: progress;
+}
+
+@keyframes buttonAnim{
+    0%{
+        background-color: #3882f6;
+        border: none;
+    }
+    100%{
+        background-color: #1f2937;
+        border: 1px solid white;        
+    }
+}
+
+@keyframes buttonAnimReverse{
+    0%{
+        background-color: #1f2937;
+        border: 1px solid white;     
+    }
+    100%{
+        background-color: #3882f6;
+        border: none;
+    }
+}
+
 a:hover{
-    font-weight: bold;
-    text-decoration: underline;
+    animation: navbarLink .2s forwards;
+}
+
+@keyframes navbarLink{
+    0%{
+        
+    }
+    100%{
+        font-size: 18px;
+    }
+}
+
+@keyframes navbarLinkReverse{
+    0%{
+        font-size: 18px;
+    }
+    100%{
+
+    }
 }
 
 h3:hover{
